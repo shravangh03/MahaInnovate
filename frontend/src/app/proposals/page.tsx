@@ -225,7 +225,7 @@ export default function ProposalsPage() {
                     Submitted: {new Date(p.submitted_at || Date.now()).toLocaleDateString()}
                   </span>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto justify-end">
                     {/* EVALUATOR QUEUE ACTION */}
                     {currentRole === 'Evaluator' && p.status === 'pending_evaluation' && (
                       <Link

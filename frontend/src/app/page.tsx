@@ -79,7 +79,7 @@ export default function LandingPage() {
           <Badge variant="success">Stage-1 Prototype</Badge>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-7 gap-3 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3 relative">
           {steps.map((step, idx) => (
             <div
               key={step.title}
