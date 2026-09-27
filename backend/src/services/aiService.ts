@@ -171,7 +171,7 @@ The challenge "${data.title || 'Smart Hospital Equipment Predictive Maintenance'
 • Proposal Evaluation yielded an overall score of 88% across 7 key criteria.
 • Pilot Sandbox trial executed over 6 months achieved 91% overall KPI fulfillment (Equipment Availability: 97%, Downtime Reduction: 35%).
 • Independent Audit: PASSED with zero non-conformances.
-• Procurement Recommendation: Approved for statewide rollout ($1.2M budget).`;
+• Procurement Recommendation: Approved for statewide rollout (₹1.2 Cr budget).`;
     }
 
     return `EXECUTIVE SUMMARY:

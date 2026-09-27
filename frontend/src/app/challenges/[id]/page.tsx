@@ -169,7 +169,7 @@ export default function ChallengeDetailPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-slate-950/80 p-4 rounded-xl border border-slate-800 text-xs">
           <div>
             <span className="text-[10px] text-slate-500 block uppercase font-semibold">Budget Range</span>
-            <span className="font-bold text-emerald-400">${challenge.budget_min.toLocaleString()} - ${challenge.budget_max.toLocaleString()}</span>
+            <span className="font-bold text-emerald-400">₹{challenge.budget_min.toLocaleString()} - ₹{challenge.budget_max.toLocaleString()}</span>
           </div>
           <div>
             <span className="text-[10px] text-slate-500 block uppercase font-semibold">Timeline</span>
@@ -391,7 +391,7 @@ export default function ChallengeDetailPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-semibold text-slate-300 mb-1">Estimated Cost ($)</label>
+                    <label className="block font-semibold text-slate-300 mb-1">Estimated Cost (₹)</label>
                     <input
                       type="number"
                       value={proposalForm.estimated_cost}

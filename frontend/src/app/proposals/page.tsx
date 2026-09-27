@@ -198,7 +198,7 @@ export default function ProposalsPage() {
                   </div>
                   <div>
                     <span className="text-[10px] text-slate-500 font-semibold uppercase block">Estimated Budget</span>
-                    <span className="font-bold text-emerald-400">${p.estimated_cost.toLocaleString()}</span>
+                    <span className="font-bold text-emerald-400">₹{p.estimated_cost.toLocaleString()}</span>
                   </div>
                   <div>
                     <span className="text-[10px] text-slate-500 font-semibold uppercase block">Eligibility</span>

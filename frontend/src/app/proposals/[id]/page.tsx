@@ -105,7 +105,7 @@ export default function ProposalDetailPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs">
           <div>
             <span className="text-[10px] text-slate-500 font-semibold uppercase block">Estimated Budget</span>
-            <span className="font-bold text-emerald-400">${proposal.estimated_cost.toLocaleString()}</span>
+            <span className="font-bold text-emerald-400">₹{proposal.estimated_cost.toLocaleString()}</span>
           </div>
           <div>
             <span className="text-[10px] text-slate-500 font-semibold uppercase block">Implementation Timeline</span>

@@ -155,7 +155,7 @@ function EvaluationContent() {
               <span className="flex items-center gap-1.5 font-bold text-indigo-400">
                 <Store className="w-4 h-4" /> Startup: {selectedProposal.startup_name}
               </span>
-              <span>Budget: <strong className="text-emerald-400">${selectedProposal.estimated_cost?.toLocaleString()}</strong></span>
+              <span>Budget: <strong className="text-emerald-400">₹{selectedProposal.estimated_cost?.toLocaleString()}</strong></span>
             </div>
             <p className="text-slate-300 leading-relaxed">{selectedProposal.description}</p>
           </div>

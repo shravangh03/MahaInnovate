@@ -103,7 +103,7 @@ export default function ProcurementPage() {
                 <Badge variant="purple">{item.status || 'RECOMMENDED FOR SCALE-UP'}</Badge>
                 <h3 className="text-base font-bold text-white mt-1">{item.startup_name || 'Innovator Startup'}</h3>
               </div>
-              <span className="text-xl font-black text-emerald-400">${(item.recommended_budget || 0).toLocaleString()} Allocation</span>
+              <span className="text-xl font-black text-emerald-400">₹{(item.recommended_budget || 0).toLocaleString()} Allocation</span>
             </div>
 
             <div className="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2 text-xs">

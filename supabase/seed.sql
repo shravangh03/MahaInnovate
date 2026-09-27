@@ -227,7 +227,7 @@ INSERT INTO reports (id, report_type, related_entity_id, content) VALUES
     'f7777777-7777-4777-a777-777777777777',
     'Lifecycle Summary',
     'd1111111-1111-4111-a111-111111111111',
-    'EXECUTIVE SUMMARY: The Smart Hospital Equipment Predictive Maintenance challenge received 18 startup inquiries and 2 shortlisted proposals. MedTech Predictive Systems was selected for pilot sandbox execution at District Civil Hospital. During the 6-month trial, the pilot achieved an overall 91% KPI achievement score (Equipment Uptime: 97%, Downtime Reduction: 35%). Independent validation passed with zero audit non-conformances. Procurement of $1.2M is RECOMMENDED for statewide hospital rollout.'
+    'EXECUTIVE SUMMARY: The Smart Hospital Equipment Predictive Maintenance challenge received 18 startup inquiries and 2 shortlisted proposals. MedTech Predictive Systems was selected for pilot sandbox execution at District Civil Hospital. During the 6-month trial, the pilot achieved an overall 91% KPI achievement score (Equipment Uptime: 97%, Downtime Reduction: 35%). Independent validation passed with zero audit non-conformances. Procurement of ₹1.2 Cr is RECOMMENDED for statewide hospital rollout.'
 );
 
 -- 15. SEED NOTIFICATIONS

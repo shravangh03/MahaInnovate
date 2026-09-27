@@ -31,7 +31,7 @@ export default function DemoFlowWizardPage() {
       actionText: 'Go to Government Dashboard',
       preview: {
         heading: 'Smart Hospital Equipment Predictive Maintenance',
-        details: 'Department: Health Department | Sector: Healthcare | Budget: $50,000 - $150,000'
+        details: 'Department: Health Department | Sector: Healthcare | Budget: ₹5,00,000 - ₹15,00,000'
       }
     },
     {
@@ -115,7 +115,7 @@ export default function DemoFlowWizardPage() {
       actionText: 'View Procurement Board',
       preview: {
         heading: 'Status: RECOMMENDED FOR SCALE-UP',
-        details: 'Allocation: $1,200,000 | Scope: 45 District Hospitals (2,500 ICU beds)'
+        details: 'Allocation: ₹1,20,00,000 (₹1.2 Cr) | Scope: 45 District Hospitals (2,500 ICU beds)'
       }
     },
     {

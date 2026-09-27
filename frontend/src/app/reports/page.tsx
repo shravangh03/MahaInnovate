@@ -17,7 +17,7 @@ Top Startup Match: MedTech Predictive Systems (92% Match)
 Proposal Evaluation: 88% Score (Problem Fit: 9/10, Tech Feasibility: 9/10, Readiness: 9/10)
 Pilot KPI Achievement: 91% Overall (Uptime: 97%, Downtime Reduction: 35%, Prediction Accuracy: 91%)
 Independent Audit: PASSED (Zero non-conformances)
-Procurement Recommendation: APPROVED for Statewide Rollout ($1,200,000 budget allocation).`
+Procurement Recommendation: APPROVED for Statewide Rollout (₹1,20,00,000 / ₹1.2 Cr budget allocation).`
   );
   const [copied, setCopied] = useState(false);
 
