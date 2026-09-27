@@ -12,7 +12,8 @@ import {
   Role
 } from '../types';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const rawBase = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api').trim().replace(/\/+$/, '');
+const API_BASE = rawBase.endsWith('/api') ? rawBase : `${rawBase}/api`;
 
 async function fetchJSON<T>(url: string, options?: RequestInit, fallbackData?: T): Promise<T> {
   try {
