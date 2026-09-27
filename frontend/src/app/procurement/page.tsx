@@ -6,7 +6,7 @@ import { api } from '../../lib/api';
 import { Procurement } from '../../types';
 import { Card } from '../../components/ui/Card';
 import { Badge } from '../../components/ui/Badge';
-import { ShoppingCart, CheckCircle2, ArrowRight, ShieldCheck, DollarSign, Building2, Rocket, FileText } from 'lucide-react';
+import { ShoppingCart, CheckCircle2, ArrowRight, ShieldCheck, IndianRupee, Building2, Rocket, FileText } from 'lucide-react';
 
 export default function ProcurementPage() {
   const [procurements, setProcurements] = useState<Procurement[]>([]);

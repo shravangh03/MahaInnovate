@@ -13,7 +13,7 @@ import {
   ArrowRight,
   MapPin,
   Calendar,
-  DollarSign,
+  IndianRupee,
   CheckCircle2
 } from 'lucide-react';
 
@@ -89,7 +89,7 @@ export default function PilotsPage() {
                 <span>{p.start_date} to {p.end_date}</span>
               </div>
               <div className="flex items-center gap-1.5 text-slate-300">
-                <DollarSign className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <IndianRupee className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                 <span>₹{(p.budget || 0).toLocaleString()} Allocated</span>
               </div>
               <div className="flex items-center gap-1.5 text-slate-300">

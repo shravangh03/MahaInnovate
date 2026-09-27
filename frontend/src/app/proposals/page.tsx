@@ -14,7 +14,7 @@ import {
   ArrowRight,
   Store,
   Clock,
-  DollarSign,
+  IndianRupee,
   User,
   CheckCircle2,
   XCircle,

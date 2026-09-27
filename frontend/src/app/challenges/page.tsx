@@ -13,7 +13,7 @@ import {
   Plus,
   Filter,
   ArrowRight,
-  DollarSign,
+  IndianRupee,
   Clock,
   MapPin,
   Building
@@ -119,7 +119,7 @@ export default function ChallengesPage() {
               {/* Requirements & Budget Meta */}
               <div className="grid grid-cols-2 gap-2 bg-slate-950/60 p-3 rounded-lg border border-slate-800 text-xs">
                 <div className="flex items-center gap-1.5 text-slate-300">
-                  <DollarSign className="w-3.5 h-3.5 text-emerald-400" />
+                  <IndianRupee className="w-3.5 h-3.5 text-emerald-400" />
                   <span>₹{c.budget_min.toLocaleString()} - ₹{c.budget_max.toLocaleString()}</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-slate-300">

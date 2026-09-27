@@ -13,7 +13,7 @@ import {
   Sparkles,
   Store,
   ArrowRight,
-  DollarSign,
+  IndianRupee,
   Clock,
   MapPin,
   CheckCircle2,
