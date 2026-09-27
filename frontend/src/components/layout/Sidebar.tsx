@@ -17,6 +17,7 @@ import {
   ShoppingCart,
   FileCheck,
   Flame,
+  PlayCircle,
   X
 } from 'lucide-react';
 
@@ -88,7 +89,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => 
 
   const SidebarContent = (
     <div className="flex flex-col justify-between h-full p-4">
-      <div className="space-y-6">
+      <div className="space-y-5">
         {/* Active Role Tag */}
         <div className="bg-slate-800/80 rounded-lg p-3 border border-slate-700/60">
           <div className="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Current Portal Mode</div>
@@ -96,6 +97,18 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => 
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
             {currentRole}
           </div>
+        </div>
+
+        {/* Quick Mobile Links (Only visible inside Mobile Menu) */}
+        <div className="sm:hidden space-y-2">
+          <Link
+            href="/demo-flow"
+            onClick={onClose}
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-md"
+          >
+            <PlayCircle className="w-4 h-4 text-emerald-200" />
+            <span>Interactive Demo (2–5 Min)</span>
+          </Link>
         </div>
 
         {/* Navigation Section */}
@@ -127,7 +140,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => 
       </div>
 
       {/* Guided Walkthrough Banner */}
-      <div className="bg-gradient-to-br from-slate-800 to-blue-950/60 border border-blue-500/20 rounded-xl p-3.5 mt-6">
+      <div className="bg-gradient-to-br from-slate-800 to-blue-950/60 border border-blue-500/20 rounded-xl p-3.5 mt-4">
         <div className="flex items-center gap-2 text-xs font-bold text-blue-300 mb-1">
           <Flame className="w-4 h-4 text-amber-400 animate-pulse" />
           <span>Primary Demo Scenario</span>
@@ -170,7 +183,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => 
                 onClick={onClose}
                 className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5 text-blue-400" />
               </button>
             </div>
             <div className="flex-1 overflow-y-auto">
