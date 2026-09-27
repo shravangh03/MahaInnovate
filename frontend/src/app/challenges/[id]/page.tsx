@@ -97,7 +97,7 @@ export default function ChallengeDetailPage() {
         expected_outcomes: proposalForm.expected_outcomes,
         estimated_cost: Number(proposalForm.estimated_cost),
         timeline: proposalForm.timeline,
-        startup_name: user.organization || 'Mishti - Krishi Sahayak AI',
+        startup_name: user.organization || 'MedTech Predictive Systems',
         challenge_title: challenge.title,
         challenge_created_by: (challenge as any).created_by || user.id
       });

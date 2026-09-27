@@ -329,7 +329,7 @@ export const updateProposalStatus = async (req: Request, res: Response) => {
     const validationId = randomUUID();
     const procurementId = randomUUID();
 
-    const startupName = p?.startup_name || 'Mishti - Krishi Sahayak AI';
+    const startupName = p?.startup_name || 'MedTech Predictive Systems';
     const challengeTitle = p?.challenge_title || 'Smart Agriculture Advisory & Crop Support Challenge';
     const cost = p?.estimated_cost || 95000;
 
