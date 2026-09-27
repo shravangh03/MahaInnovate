@@ -4,54 +4,69 @@ import React from 'react';
 import Link from 'next/link';
 import { useAuth } from '../../context/AuthContext';
 import { Role } from '../../types';
-import { Shield, User, PlayCircle, Bell, ChevronDown, Sparkles } from 'lucide-react';
+import { Shield, User, PlayCircle, Bell, ChevronDown, Sparkles, Menu, X } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
-  const { currentRole, setRole, user, demoUsers } = useAuth();
+interface NavbarProps {
+  onToggleMobileMenu?: () => void;
+  isMobileMenuOpen?: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenuOpen }) => {
+  const { currentRole, setRole, user } = useAuth();
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const roles: Role[] = ['Government Officer', 'Startup', 'Evaluator', 'Admin'];
 
   return (
-    <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-white px-6 py-3 flex items-center justify-between shadow-md">
-      {/* Brand & Title */}
-      <div className="flex items-center gap-4">
+    <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-white px-4 md:px-6 py-3 flex items-center justify-between shadow-md">
+      {/* Brand & Mobile Hamburger */}
+      <div className="flex items-center gap-3">
+        {onToggleMobileMenu && (
+          <button
+            onClick={onToggleMobileMenu}
+            className="p-1.5 text-slate-300 hover:text-white rounded-lg lg:hidden hover:bg-slate-800 transition-colors"
+            title="Toggle Menu"
+          >
+            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        )}
+
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="bg-gradient-to-br from-blue-600 to-indigo-700 p-2 rounded-lg text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
             <Shield className="w-5 h-5" />
           </div>
           <div>
-            <div className="font-bold text-lg tracking-tight flex items-center gap-2">
-              MahaInnovate <span className="bg-blue-600/30 text-blue-400 text-xs px-2 py-0.5 rounded-full border border-blue-500/30">SIH MVP</span>
+            <div className="font-bold text-base md:text-lg tracking-tight flex items-center gap-2">
+              MahaInnovate <span className="bg-blue-600/30 text-blue-400 text-[10px] md:text-xs px-2 py-0.5 rounded-full border border-blue-500/30">SIH MVP</span>
             </div>
-            <p className="text-xs text-slate-400 font-medium">GovTech Challenge & Startup Procurement Platform</p>
+            <p className="text-xs text-slate-400 font-medium hidden md:block">GovTech Challenge & Startup Procurement Platform</p>
           </div>
         </Link>
       </div>
 
       {/* Action Controls */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 md:gap-4">
         {/* Quick Demo Walkthrough Button */}
         <Link
           href="/demo-flow"
-          className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-semibold px-3.5 py-1.5 rounded-md shadow-md hover:shadow-emerald-500/20 transition-all border border-emerald-400/30"
+          className="flex items-center gap-1.5 md:gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-semibold px-2.5 md:px-3.5 py-1.5 rounded-md shadow-md hover:shadow-emerald-500/20 transition-all border border-emerald-400/30"
         >
-          <PlayCircle className="w-4 h-4 text-emerald-200 animate-pulse" />
-          <span>Interactive Demo (2–5 Min)</span>
+          <PlayCircle className="w-4 h-4 text-emerald-200 animate-pulse shrink-0" />
+          <span className="hidden sm:inline">Interactive Demo</span>
         </Link>
 
         {/* AI Assistant Quick Link */}
         <Link
           href="/ai-assistant"
-          className="flex items-center gap-1.5 bg-blue-900/50 hover:bg-blue-800/60 border border-blue-500/30 text-blue-300 hover:text-white text-xs font-medium px-3 py-1.5 rounded-md transition-colors"
+          className="flex items-center gap-1.5 bg-blue-900/50 hover:bg-blue-800/60 border border-blue-500/30 text-blue-300 hover:text-white text-xs font-medium px-2.5 md:px-3 py-1.5 rounded-md transition-colors"
         >
-          <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-          <span>AI Assistant</span>
+          <Sparkles className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+          <span className="hidden md:inline">AI Assistant</span>
         </Link>
 
         {/* Notifications */}
         <button
-          className="relative p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+          className="relative p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors hidden sm:block"
           title="Notifications"
         >
           <Bell className="w-4 h-4" />
@@ -62,9 +77,9 @@ export const Navbar: React.FC = () => {
         <div className="relative">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center gap-2.5 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
+            className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700/80 border border-slate-700 px-2.5 md:px-3 py-1.5 rounded-lg text-xs font-medium transition-all"
           >
-            <div className="w-6 h-6 rounded-full bg-slate-700 overflow-hidden border border-slate-600">
+            <div className="w-6 h-6 rounded-full bg-slate-700 overflow-hidden border border-slate-600 shrink-0">
               <img src={user.avatar_url} alt={user.full_name} className="w-full h-full object-cover" />
             </div>
             <div className="text-left hidden md:block">

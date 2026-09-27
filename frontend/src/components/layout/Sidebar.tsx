@@ -16,9 +16,8 @@ import {
   Award,
   ShoppingCart,
   FileCheck,
-  Users,
-  Settings,
-  Flame
+  Flame,
+  X
 } from 'lucide-react';
 
 interface NavItem {
@@ -27,7 +26,12 @@ interface NavItem {
   icon: React.ReactNode;
 }
 
-export const Sidebar: React.FC = () => {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => {
   const pathname = usePathname();
   const { currentRole } = useAuth();
 
@@ -82,8 +86,8 @@ export const Sidebar: React.FC = () => {
 
   const navItems = getNavItems();
 
-  return (
-    <aside className="w-64 bg-slate-900 border-r border-slate-800 text-slate-300 min-h-[calc(100vh-57px)] flex flex-col justify-between p-4 shrink-0">
+  const SidebarContent = (
+    <div className="flex flex-col justify-between h-full p-4">
       <div className="space-y-6">
         {/* Active Role Tag */}
         <div className="bg-slate-800/80 rounded-lg p-3 border border-slate-700/60">
@@ -106,6 +110,7 @@ export const Sidebar: React.FC = () => {
                 <Link
                   key={item.label}
                   href={item.href}
+                  onClick={onClose}
                   className={`flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                     isActive
                       ? 'bg-blue-600/20 text-blue-400 border border-blue-500/30 font-semibold'
@@ -132,11 +137,48 @@ export const Sidebar: React.FC = () => {
         </p>
         <Link
           href="/demo-flow"
+          onClick={onClose}
           className="mt-3 block text-center text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white py-1.5 rounded-lg transition-colors shadow"
         >
           Launch Walkthrough →
         </Link>
       </div>
-    </aside>
+    </div>
+  );
+
+  return (
+    <>
+      {/* Desktop Sidebar */}
+      <aside className="hidden lg:flex w-64 bg-slate-900 border-r border-slate-800 text-slate-300 min-h-[calc(100vh-57px)] flex-col shrink-0">
+        {SidebarContent}
+      </aside>
+
+      {/* Mobile Drawer Overlay */}
+      {isOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden flex">
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"
+            onClick={onClose}
+          />
+
+          {/* Drawer Panel */}
+          <div className="relative z-50 w-72 bg-slate-900 text-slate-300 h-full border-r border-slate-800 shadow-2xl flex flex-col">
+            <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-200">Navigation Menu</span>
+              <button
+                onClick={onClose}
+                className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto">
+              {SidebarContent}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };

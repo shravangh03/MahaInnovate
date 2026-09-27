@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { AuthProvider } from '../context/AuthContext';
-import { Navbar } from '../components/layout/Navbar';
-import { Sidebar } from '../components/layout/Sidebar';
+import { LayoutWrapper } from '../components/layout/LayoutWrapper';
 
 export const metadata: Metadata = {
   title: 'MahaInnovate - GovTech Challenge & Startup Procurement Platform',
@@ -18,13 +17,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className="bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col">
         <AuthProvider>
-          <Navbar />
-          <div className="flex flex-1">
-            <Sidebar />
-            <main className="flex-1 p-6 md:p-8 bg-slate-950/60 overflow-y-auto max-w-7xl">
-              {children}
-            </main>
-          </div>
+          <LayoutWrapper>{children}</LayoutWrapper>
         </AuthProvider>
       </body>
     </html>
